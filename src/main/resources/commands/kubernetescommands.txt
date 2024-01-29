@@ -1,0 +1,54 @@
+//Commands related to kubernetes
+
+Kubectl version
+(To fetch the client version)
+
+kubectl run my-nginx -image nginx
+(To run the nginx pod)
+
+Kubectl get pods
+(To list all the pods)
+
+kubectl delete pod nginx
+(To delete the pod)
+
+kubectl get all
+(Get all resoources )
+Note: all resources doesn't mean all the resiurces but some of the major resources.
+
+kubectl create deployment my-nginx --image nginx
+(To create a deployment in kubernetes)
+
+kubectl delete depoyment ng-nginx
+(To delete deployment)
+
+kubectl scale deploy/my-nginx --replicas 3
+(To scale up or scale down)
+
+kubectl get deploy/my-nginx
+(To get the resources specific to particular deployment)
+
+kubectl get deploy/my-apache -o wide
+
+kubectl get deploy/my-apache -o yaml
+(Above two commands are used to get the information in much more human readable format)
+
+kubectl describle deploy/my-nginx
+(it provide the description for the pod)
+
+kubectl get nodes
+(To list the node info)
+
+kubectl get events
+(To fetch all the events happened during anything example deletion pod and pod creation etc)
+
+kubectl logs deploy/my-nginx
+(To fetch the logs this command will print the log for the first container it finds)
+
+kubectl logs pod/my-nginx-121212
+(To fethc the logs for particular pod)
+
+kubectl logs -l app=my-apache
+(To fetch logs based on the pod label)
+
+
