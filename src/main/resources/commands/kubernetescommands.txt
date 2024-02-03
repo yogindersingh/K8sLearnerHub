@@ -51,4 +51,27 @@ kubectl logs pod/my-nginx-121212
 kubectl logs -l app=my-apache
 (To fetch logs based on the pod label)
 
+SERVICE TYPES
+There are various types of services.They are basically a service layer to control the incoming traffic to the pod.
+Example:
+ClusterIP
+NodePort
+LoadBalancer
+Ingress
+
+Kubectl expose deployment/my-nginx --port 8888
+(Default is ClusterIP export port 8888 on the port and only other port inside this cluster can connect to this).
+
+Kubectl get service
+(List kubernestes services)
+
+kubectl expose deployment/my-nginx --port 8888 --name httpenv-np --type NodePort
+(expose port which can we called externally)
+(NodePort are high ports and range from 30000 to 32227)
+
+Kubectl export deployment/my-nginx --port 8888 --name httpend-lb --type LoadBalancer
+(expose port which can we called externally and dynamic in nature)
+
+Kubectl get namespaces
+(To get namespaces for the cluster)
 
