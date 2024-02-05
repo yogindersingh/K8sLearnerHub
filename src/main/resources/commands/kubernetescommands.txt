@@ -75,3 +75,11 @@ Kubectl export deployment/my-nginx --port 8888 --name httpend-lb --type LoadBala
 Kubectl get namespaces
 (To get namespaces for the cluster)
 
+kubectl create deployment sample --image nginx --dry-run=client -o yaml
+(command to create deployment and print description in the form of yaml)
+
+kubectl create job test --image nginx --dry-run=client -o yaml
+(command to create job and print the description in the yaml format)
+
+kubectl expose deployment/test --port 80 --dry-run=client -o yaml
+(command to create service and print the description in the yaml format)
