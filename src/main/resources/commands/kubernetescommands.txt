@@ -83,3 +83,27 @@ kubectl create job test --image nginx --dry-run=client -o yaml
 
 kubectl expose deployment/test --port 80 --dry-run=client -o yaml
 (command to create service and print the description in the yaml format)
+
+
+YAML FILES
+They generally contains four parts
+* apiversion
+* kind
+* metadata
+* spec
+
+kubectl api-resources
+(To get the list of api versions and kind)
+
+kubectl api-version
+(To list all api versions)
+
+kubectl explain services
+(To get the different keys for particular resource type in this case services)
+
+Kubectl explain service.spec
+(To get the different keys and filter them (Here filtering for the spec keys))
+
+kubectl diff abc.yml
+(if yml is already deployment will tell the changes made in deployment)
+
